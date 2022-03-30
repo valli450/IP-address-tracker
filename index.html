@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | IP Address Tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin="">
+  </script>
+
+  <link rel="stylesheet" href="./styles.css" type="text/css">
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body onload="getVisitorIp()">
+  <div class="whale-section" >
+    <header class="header">
+      <h1>IP Address Tracker</h1>
+      <form class="header__input" onsubmit="return false"> 
+        <input type="text" class="ipnumbers" placeholder="Search for any IP address or domain"/>
+        <button onclick="getVisitorIp()" class="ipsubmit">
+          <svg xmlns="http://www.w3.org/2000/svg" width="11" height="14">
+            <path fill="none" stroke="#FFF" stroke-width="3" d="M2 1l6 6-6 6"/>
+          </svg>
+        </button>
+      </form>
+    </header>
+    <main class="content">
+      <div class="content__absolute">
+        <div class="content__return-block return-block">
+          <div class="return-block__ip ip-address">
+            <p class="text-grey">Ip Address</p>
+            <p class="text-bold tb-ip-address"></p>
+          </div>
+          <div class="return-block__ip ip-location">
+            <p class="text-grey">Location</p>
+            <p class="text-bold tb-ip-location"></p>
+          </div>
+          <div class="return-block__ip ip-timezone">
+            <p class="text-grey">Timezone</p>
+            <p class="text-bold tb-ip-timezone"></p>
+          </div>
+          <div class="return-block__ip ip-isp">
+            <p class="text-grey">Isp</p>
+            <p class="text-bold tb-ip-isp"></p>
+          </div>
+        </div>
+      </div>
+      <div id="content__map"></div>
+    </main>
+    <footer class="footer">
+      <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="#">Your Name Here</a>.
+      </div>
+    </footer>
+  </div>
+  <script type="text/javascript" src="./main.js"></script>
+</body>
+</html>
